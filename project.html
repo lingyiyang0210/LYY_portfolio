@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lee Yee Yang | Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+            line-height: 1.6;
+            background-color: #1a1a1a;
+            padding: 50px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .main-wrapper {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .portfolio-card {
+            background-color: #222;
+            border-radius: 15px;
+            padding: 20px 30px 40px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .header-top {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            background-color: #FF8C00;
+            padding: 15px 30px;
+            border-radius: 8px;
+            justify-content: space-between;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .profile-section {
+            display: flex;
+            align-items: center;
+        }
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            margin-right: 15px;
+            background-color: #4CAF50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            font-size: 2em;
+        }
+        .profile-pic.custom-avatar {
+            background-image: url('pc.JPG');
+            background-size: cover;
+            background-position: center;
+            background-color: transparent;
+            font-size: 0;
+        }
+        .profile-info h1 {
+            margin: 0;
+            font-size: 1.8em;
+            color: #fff;
+        }
+        .profile-info p {
+            margin: 0;
+            font-size: 1.1em;
+            color: #eee;
+        }
+        .category-tabs {
+            display: flex;
+            align-items: center;
+            max-width: 600px;
+            justify-content: space-around;
+        }
+        .tab-item {
+            text-align: center;
+            padding: 8px 5px;
+            font-size: 0.9em;
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .tab-item i {
+            font-size: 2.5em;
+            margin-bottom: 5px;
+            color: #fff;
+            transition: transform 0.3s ease;
+        }
+        .tab-item:hover i {
+            transform: scale(1.2);
+        }
+        .project-section {
+            width: 100%;
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .project-card {
+            background-color: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            width: calc(50% - 20px);
+            min-width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .project-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+        .project-image-container {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+            transition: height 0.5s ease;
+            background-size: cover;
+            background-position: center;
+        }
+        .project-card:hover .project-image-container {
+            height: 300px;
+        }
+        .project-info {
+            padding: 20px 15px 30px 15px;
+            text-align: left;
+        }
+        .project-info h2 {
+            font-size: 1.5em;
+            margin: 0 0 5px 0;
+            color: #FF8C00;
+        }
+        .project-info p {
+            font-size: 1em;
+            color: #ccc;
+            margin: 0 0 15px 0;
+        }
+        .project-title {
+            color: #FF8C00;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            display: inline-block;
+            border-bottom: 3px solid #FF8C00;
+            padding-bottom: 5px;
+            text-align: center;
+            width: 100%;
+        }
+        .play-button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+        .play-button:hover {
+            background-color: #388E3C;
+        }
+        @media (max-width: 1000px) {
+            .project-card {
+                width: calc(50% - 20px);
+            }
+        }
+        @media (max-width: 700px) {
+            .header-top {
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 10px;
+            }
+            .profile-section {
+                margin-bottom: 10px;
+                width: 100%;
+                justify-content: center;
+            }
+            .category-tabs {
+                justify-content: space-between;
+                max-width: 100%;
+                margin-top: 10px;
+            }
+            .project-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <div class="portfolio-card">
+
+            <div class="header-top">
+                <div class="profile-section">
+                    <div class="profile-pic custom-avatar">LY</div>
+                    <div class="profile-info">
+                        <h1>Lee Yee Yang</h1>
+                        <p>Game Student / Game Programmer</p>
+                    </div>
+                </div>
+
+                <div class="category-tabs">
+                    <a href="index.html" class="tab-item">
+                        <i class="material-icons">person</i>
+                        <span>ABOUT ME</span>
+                    </a>
+                    <a href="game.html" class="tab-item">
+                        <i class="material-icons">sports_esports</i>
+                        <span>GAME</span>
+                    </a>
+                    <a href="project.html" class="tab-item">
+                        <i class="material-icons">movie</i>
+                        <span>PROJECT</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-title">PROJECTS</div>
+
+            <div class="project-section">
+
+                <div class="project-card">
+                    <div class="project-image-container" style="background-image: url('MycoBlast.png');" title="Mycoblast"></div>
+                    <div class="project-info">
+                        <h2>Mycoblast</h2>
+                        <p>A survival game where you navigate a hazardous environment.</p>
+                        <a href="https://ling-yiyang.itch.io/mycoblast" target="_blank" class="play-button">Play on itch.io</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image-container" style="background-image: url('Lost Fins.jpg');" title="Lost Fins"></div>
+                    <div class="project-info">
+                        <h2>Lost Fins</h2>
+                        <p>An underwater exploration adventure game.</p>
+                        <a href="https://ling-yiyang.itch.io/lost-fins" target="_blank" class="play-button">Play on itch.io</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image-container" style="background-image: url('The Room.png');" title="The Room"></div>
+                    <div class="project-info">
+                        <h2>The Room</h2>
+                        <p>A puzzle-solving and escape room experience.</p>
+                        <a href="https://ling-yiyang.itch.io/the-room" target="_blank" class="play-button">Play on itch.io</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image-container" style="background-image: url('Too Hot.png');" title="Too Hot For Bam"></div>
+                    <div class="project-info">
+                        <h2>Too Hot For Bam</h2>
+                        <p>Biggie's mischievous antics may possibly land Bam in trouble.</p>
+                        <a href="https://yiirii.itch.io/too-hot-for-bam" target="_blank" class="play-button">Play on itch.io</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

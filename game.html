@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lee Yee Yang | Played Games</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+            line-height: 1.6;
+            background-color: #1a1a1a;
+            padding: 50px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .main-wrapper {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .portfolio-card {
+            background-color: #222;
+            border-radius: 15px;
+            padding: 20px 30px 40px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .header-top {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            background-color: #FF8C00;
+            padding: 15px 30px;
+            border-radius: 8px;
+            justify-content: space-between;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .profile-section {
+            display: flex;
+            align-items: center;
+        }
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            margin-right: 15px;
+            background-color: #4CAF50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            font-size: 2em;
+        }
+        .profile-pic.custom-avatar {
+            background-image: url('pc.JPG');
+            background-size: cover;
+            background-position: center;
+            background-color: transparent;
+            font-size: 0;
+        }
+        .profile-info h1 {
+            margin: 0;
+            font-size: 1.8em;
+            color: #fff;
+        }
+        .profile-info p {
+            margin: 0;
+            font-size: 1.1em;
+            color: #eee;
+        }
+        .category-tabs {
+            display: flex;
+            align-items: center;
+            max-width: 600px;
+            justify-content: space-around;
+        }
+        .tab-item {
+            text-align: center;
+            padding: 8px 5px;
+            font-size: 0.9em;
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .tab-item i {
+            font-size: 2.5em;
+            margin-bottom: 5px;
+            color: #fff;
+            transition: transform 0.3s ease;
+        }
+        .tab-item:hover i {
+            transform: scale(1.2);
+        }
+
+        .game-section {
+            width: 100%;
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .game-card {
+            background-color: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            width: calc(33% - 20px);
+            min-width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .game-card:hover {
+            transform: translateY(-5px);
+        }
+        .game-image-container {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+            transition: height 0.3s ease;
+        }
+        .game-card:hover .game-image-container {
+            height: 300px;
+        }
+        .game-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transform: translateY(0);
+            transition: transform 0.5s ease;
+        }
+        .game-card:hover .game-image-container img {
+            transform: translateY(-100px);
+        }
+        .game-card h2 {
+            font-size: 1.5em;
+            margin: 20px 0 10px 0;
+            color: #FF8C00;
+        }
+        .game-card p {
+            font-size: 1em;
+            color: #ccc;
+            padding: 0 15px 20px 15px;
+        }
+        .game-title {
+            color: #FF8C00;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            display: inline-block;
+            border-bottom: 3px solid #FF8C00;
+            padding-bottom: 5px;
+            text-align: center;
+            width: 100%;
+        }
+        @media (max-width: 1000px) {
+            .game-card {
+                width: calc(50% - 20px);
+            }
+        }
+        @media (max-width: 700px) {
+            .header-top {
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 10px;
+            }
+            .profile-section {
+                margin-bottom: 10px;
+                width: 100%;
+                justify-content: center;
+            }
+            .category-tabs {
+                justify-content: space-between;
+                max-width: 100%;
+                margin-top: 10px;
+            }
+            .game-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <div class="portfolio-card">
+            
+            <div class="header-top">
+                <div class="profile-section">
+                    <div class="profile-pic custom-avatar"></div>
+                    <div class="profile-info">
+                        <h1>Lee Yee Yang</h1>
+                        <p>Game Student / Game Programmer</p>
+                    </div>
+                </div>
+                
+                <div class="category-tabs">
+                    <a href="index.html" class="tab-item">
+                        <i class="material-icons">person</i>
+                        <span>ABOUT ME</span>
+                    </a>
+                    <a href="game.html" class="tab-item">
+                        <i class="material-icons">sports_esports</i>
+                        <span>GAME</span>
+                    </a>
+                    <a href="project.html" class="tab-item">
+                        <i class="material-icons">movie</i>
+                        <span>PROJECT</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="game-title">GAME THAT INSPIRED ME</div>
+
+            <div class="game-section">
+                
+                <div class="game-card">
+                    <div class="game-image-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/c/c0/Dying_Light_cover.jpg" alt="Dying Light Series">
+                    </div>
+                    <h2>Dying Light Series</h2>
+                    <p>Both Dying Light 1 and 2 offer exhilarating parkour and zombie-slaying action. I've spent countless hours exploring the open worlds and experiencing the intense combat.</p>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-image-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/God_of_War_4_cover.jpg" alt="God of War Series">
+                    </div>
+                    <h2>God of War Series</h2>
+                    <p>The epic sagas of Kratos, from the original Greek mythology to the Norse realms, have always captivated me with their storytelling and brutal combat.</p>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-image-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/f/fd/Nioh_cover_art.jpg" alt="Nioh">
+                    </div>
+                    <h2>Nioh</h2>
+                    <p>Nioh is a challenging action RPG featuring samurai combat, supernatural elements, and precise timing mechanics. I enjoyed the intense difficulty and strategic gameplay.</p>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-image-container">
+                        <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/638970/capsule_616x353.jpg?t=1741340656" alt="Yakuza Series">
+                    </div>
+                    <h2>Yakuza Series</h2>
+                    <p>The Yakuza series combines intense storylines with open-world exploration and mini-games. I love the city life immersion and character development.</p>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-image-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/1/1f/Call_of_Duty_Modern_Warfare_%282019%29_cover.jpg" alt="Call of Duty Series">
+                    </div>
+                    <h2>Call of Duty Series</h2>
+                    <p>The Call of Duty series offers fast-paced first-person shooting action. I've experienced multiplayer battles and cinematic campaigns across multiple titles.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
